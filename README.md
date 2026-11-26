@@ -10,4 +10,6 @@ Flux RSS personnalisés pour trois émissions de Radio-Canada OHdio, dont le flu
 
 Dans Pocket Casts : onglet **Podcasts → + → Ajouter par URL**, puis coller l'adresse du flux.
 
-Les flux sont régénérés chaque soir : les nouveaux épisodes apparaissent automatiquement, sans rien changer dans Pocket Casts.
+## Mise à jour automatique
+
+Les flux sont régénérés chaque jour par GitHub Actions (`.github/workflows/update-feeds.yml`, 21 h UTC, soit 16 h heure de l'Est en hiver) à partir des scripts Python dans `scripts/`. Aucune intervention manuelle n'est requise : les nouveaux épisodes apparaissent automatiquement dans Pocket Casts. On peut aussi lancer une mise à jour manuellement depuis l'onglet **Actions** du dépôt.
