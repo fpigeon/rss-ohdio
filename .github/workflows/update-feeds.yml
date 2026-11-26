@@ -1,0 +1,56 @@
+# Met à jour les trois flux RSS OHdio chaque jour et les publie sur la branche main.
+# Fonctionne entièrement côté GitHub : aucune approbation manuelle requise.
+# Déclenchement manuel possible depuis l'onglet Actions du dépôt.
+name: Mettre à jour les flux OHdio
+
+on:
+  schedule:
+    # 21 h UTC = 16 h heure de l'Est en hiver (17 h en heure d'été)
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-feeds
+  cancel-in-progress: false
+
+jobs:
+  update-feeds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Régénérer les flux
+        run: |
+          python3 scripts/generate_la_journee.py --limit 30 --out la-journee.xml \
+            --feed-url https://raw.githubusercontent.com/fpigeon/rss-ohdio/main/la-journee.xml
+          python3 scripts/generate_feed.py \
+            --series-url https://ici.radio-canada.ca/ohdio/balados/14021/lhistoire-est-encore-jeune \
+            --out lhistoire.xml --limit 30 --min-duration 600 \
+            --feed-url https://raw.githubusercontent.com/fpigeon/rss-ohdio/main/lhistoire.xml
+          python3 scripts/generate_feed.py \
+            --series-url https://ici.radio-canada.ca/ohdio/balados/13843/hors-des-ondes-avec-patrice-roy \
+            --out hors-des-ondes.xml --limit 30 --min-duration 600 \
+            --feed-url https://raw.githubusercontent.com/fpigeon/rss-ohdio/main/hors-des-ondes.xml
+
+      - name: Valider les XML
+        run: |
+          python3 -c "
+          import xml.etree.ElementTree as ET
+          for f in ['la-journee.xml', 'lhistoire.xml', 'hors-des-ondes.xml']:
+              ch = ET.parse(f).getroot().find('channel')
+              print(f, len(ch.findall('item')), 'épisodes')
+          "
+
+      - name: Publier les changements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add la-journee.xml lhistoire.xml hors-des-ondes.xml
+          git diff --cached --quiet || (git commit -m "Mise à jour quotidienne des flux OHdio" && git push)
