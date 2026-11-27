@@ -6,13 +6,26 @@
 <language>fr-ca</language>
 <description>Jean-Philippe Wauthier et ses complices, dont le bel Olivier Niquet, passent l'actualité dans le tordeur, avec l'esprit mordant et affûté qu'on leur connaît. Évidemment, Jean-Sébastien Girard y fait quelques saucettes. Les fans de l'émission culte La soirée est (encore) jeune en retrouveront l'énergie, le plaisir et le côté juste assez piquant.</description>
 <copyright>© ICI Radio-Canada — audio hébergé par Radio-Canada, flux généré pour usage personnel</copyright>
-<lastBuildDate>Thu, 26 Nov 2026 00:29:43 +0000</lastBuildDate>
+<lastBuildDate>Fri, 27 Nov 2026 14:14:13 +0000</lastBuildDate>
 <itunes:author>Radio-Canada</itunes:author>
 <itunes:owner><itunes:name>ICI Radio-Canada</itunes:name></itunes:owner>
 <itunes:image href="https://images.radio-canada.ca/w_1400,h_1400/v1/audio/partenaire-externe/1x1/la-journee-est-encore-jeune-visuel-partenaire-externe.jpg"/>
 <itunes:explicit>no</itunes:explicit>
 <itunes:category text="Society &amp; Culture"/>
 <image><url>https://images.radio-canada.ca/w_1400,h_1400/v1/audio/partenaire-externe/1x1/la-journee-est-encore-jeune-visuel-partenaire-externe.jpg</url><title>La journée (est encore jeune)</title><link>https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune</link></image>
+<item>
+<title>Jeudi 26 nov. 2026 : Nathalie Petrowski, Hugo Dumas et Alexandre Curzi</title>
+<link>https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1292177/jeudi-26-nov-2026-nathalie-petrowski-hugo-dumas-et-alexandre-curzi</link>
+<guid isPermaLink="false">ohdio-9887-1292177</guid>
+<pubDate>Thu, 26 Nov 2026 14:30:00 -0500</pubDate>
+<description>Nathalie Petrowski donne cinq raisons d’écouter de la musique québécoise. Hugo Dumas critique le film Santa Claude, qui est « un petit peu n'importe quoi ». Et Alexandre Curzi explique pourquoi il se porte candidat pour le Bloc québécois et non le NPD ou le Parti québécois.</description>
+<content:encoded><![CDATA[<p>Nathalie Petrowski donne cinq raisons d’écouter de la musique québécoise. Hugo Dumas critique le film Santa Claude, qui est « un petit peu n'importe quoi ». Et Alexandre Curzi explique pourquoi il se porte candidat pour le Bloc québécois et non le NPD ou le Parti québécois.</p><p>Épisode diffusé sur ICI Première et publié sur OHdio : <a href="https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1292177/jeudi-26-nov-2026-nathalie-petrowski-hugo-dumas-et-alexandre-curzi">https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1292177/jeudi-26-nov-2026-nathalie-petrowski-hugo-dumas-et-alexandre-curzi</a></p>]]></content:encoded>
+<enclosure url="https://rcavmedias-download.akamaized.net/mp4/8d8fbd16-307f-4736-8859-b7504a8849c4/2026-11-26_14_30_00_lajourneeestencorejeuneohdio_0000_128.mp4" length="40943298" type="audio/mp4"/>
+<itunes:duration>00:34:18</itunes:duration>
+<itunes:author>Radio-Canada</itunes:author>
+<itunes:explicit>no</itunes:explicit>
+<itunes:episode>868</itunes:episode>
+</item>
 <item>
 <title>Mercredi 25 nov. 2026 : Louis Blouin et Guy Cormier</title>
 <link>https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1291923/mercredi-25-nov-2026-louis-blouin-et-guy-cormier</link>
@@ -389,19 +402,6 @@
 <itunes:author>Radio-Canada</itunes:author>
 <itunes:explicit>no</itunes:explicit>
 <itunes:episode>839</itunes:episode>
-</item>
-<item>
-<title>Jeudi 22 oct. 2026 : Nathalie Petrowski, Hugo Dumas et Simon Coutu</title>
-<link>https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1283430/jeudi-22-oct-2026-nathalie-petrowski-hugo-dumas-et-simon-coutu</link>
-<guid isPermaLink="false">ohdio-9887-1283430</guid>
-<pubDate>Thu, 22 Oct 2026 14:30:00 -0500</pubDate>
-<description>Nathalie Petrowski encense le spectacle de Louis-José Houde, Et jusqu’à la fin la beauté. Hugo Dumas parle du documentaire L’empire LVMH. Et Simon Coutu présente sa série documentaire Fracture américaine.</description>
-<content:encoded><![CDATA[<p>Nathalie Petrowski encense le spectacle de Louis-José Houde, Et jusqu’à la fin la beauté. Hugo Dumas parle du documentaire L’empire LVMH. Et Simon Coutu présente sa série documentaire Fracture américaine.</p><p>Épisode diffusé sur ICI Première et publié sur OHdio : <a href="https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1283430/jeudi-22-oct-2026-nathalie-petrowski-hugo-dumas-et-simon-coutu">https://ici.radio-canada.ca/ohdio/balados/9887/la-journee-est-encore-jeune/1283430/jeudi-22-oct-2026-nathalie-petrowski-hugo-dumas-et-simon-coutu</a></p>]]></content:encoded>
-<enclosure url="https://rcavmedias-download.akamaized.net/mp4/692c506c-297e-4018-80aa-901a1da09ae9/2026-10-22_14_30_00_lajourneeestencorejeuneohdio_0000_128.mp4" length="42010749" type="audio/mp4"/>
-<itunes:duration>00:35:25</itunes:duration>
-<itunes:author>Radio-Canada</itunes:author>
-<itunes:explicit>no</itunes:explicit>
-<itunes:episode>838</itunes:episode>
 </item>
 </channel>
 </rss>
