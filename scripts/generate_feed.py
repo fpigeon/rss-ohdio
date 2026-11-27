@@ -38,9 +38,18 @@ def fetch_json(url):
     return json.loads(fetch(url))
 
 def head_length(url):
-    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.headers.get("Content-Length", "0")
+    # Un seul HEAD qui échoue (réseau, CDN) ne doit pas faire planter tout le flux :
+    # on réessaie, puis on continue avec une taille inconnue ("0").
+    last = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.headers.get("Content-Length", "0")
+        except Exception as e:
+            last = e; time.sleep(2 * (attempt + 1))
+    print(f"HEAD impossible pour {url} ({last}) — taille mise à 0", file=sys.stderr)
+    return "0"
 
 def series_data(series_url):
     page = fetch(series_url)

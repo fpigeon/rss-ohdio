@@ -50,6 +50,8 @@ def fetch_json(url):
 def episode_urls():
     page = fetch(SERIES_URL)
     m = re.search(r'<script id=JSONLDCONTENT[^>]*>(.*?)</script>', page, re.S)
+    if not m:
+        raise RuntimeError("JSON-LD introuvable sur la page de l'émission (page bloquée ou modifiée ?)")
     data = json.loads(m.group(1))
     series = [g for g in data["@graph"] if g.get("@type") == "PodcastSeries"][0]
     return [e["@id"].replace("#episode", "") for e in series["episode"]]
@@ -84,10 +86,15 @@ def resolve_audio(ep):
     if not audio_url:
         return None
     ep["audio_url"] = audio_url
-    # taille du fichier (en-tête seulement)
-    req = urllib.request.Request(audio_url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        ep["length"] = r.headers.get("Content-Length", "0")
+    # taille du fichier (en-tête seulement). Un HEAD qui échoue ne doit pas
+    # faire planter tout le flux : on continue avec une taille inconnue ("0").
+    try:
+        req = urllib.request.Request(audio_url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            ep["length"] = r.headers.get("Content-Length", "0")
+    except Exception as e:
+        print(f"HEAD impossible pour {audio_url} ({e}) — taille mise à 0", file=sys.stderr)
+        ep["length"] = "0"
     return ep
 
 def rfc822(date_str):
