@@ -6,13 +6,14 @@
 <language>fr-ca</language>
 <description>L’histoire (est encore jeune), des éphémérides sur l’acide! Jean-Philippe Wauthier insuffle l’énergie, l’esprit et le mordant de La journée (est encore jeune) au récit historique. Entouré de complices et de spécialistes, il présente le passé avec un sens du rythme, une curiosité et un humour assumé : c’est de l’histoire autrement!</description>
 <copyright>© ICI Radio-Canada — audio hébergé par Radio-Canada, flux généré pour usage personnel</copyright>
-<lastBuildDate>Fri, 27 Nov 2026 14:14:07 +0000</lastBuildDate>
+<lastBuildDate>Fri, 27 Nov 2026 14:23:50 +0000</lastBuildDate>
 <itunes:author>Radio-Canada</itunes:author>
 <itunes:owner><itunes:name>ICI Radio-Canada</itunes:name></itunes:owner>
 <itunes:image href="https://images.radio-canada.ca/q_auto,w_1200/v1/audio/balado/1x1/lheej-visuel-moteur-balado-ohdio.jpg"/>
 <itunes:explicit>no</itunes:explicit>
 <itunes:category text="Society &amp; Culture"/>
 <image><url>https://images.radio-canada.ca/q_auto,w_1200/v1/audio/balado/1x1/lheej-visuel-moteur-balado-ohdio.jpg</url><title>L’histoire (est encore jeune)</title><link>https://ici.radio-canada.ca/ohdio/balados/14021/lhistoire-est-encore-jeune</link></image>
+<atom:link href="https://raw.githubusercontent.com/fpigeon/rss-ohdio/main/lhistoire.xml" rel="self" type="application/rss+xml"/>
 <item>
 <title>26 novembre 1942 : la sortie du film Casablanca</title>
 <link>https://ici.radio-canada.ca/ohdio/balados/14021/lhistoire-est-encore-jeune/1291291/26-novembre-1942-la-sortie-du-film-casablanca</link>
