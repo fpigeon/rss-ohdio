@@ -1,4 +1,11 @@
 # Met à jour les trois flux RSS OHdio chaque jour et les publie sur la branche main.
+# Version 2 (26 nov. 2026) : chaque flux est régénéré dans sa propre étape, pour
+# qu'un incident sur un seul flux (ex. un appel audio qui échoue) ne fasse plus
+# échouer les deux autres. Les scripts durcis tolèrent aussi un HEAD audio en échec.
+#
+# INSTALLATION (manuelle, l'appli Muse ne peut pas écrire dans .github/workflows) :
+# sur GitHub, dans fpigeon/rss-ohdio, ouvrir .github/workflows/update-feeds.yml,
+# remplacer tout son contenu par ce fichier, puis Commit changes.
 # Fonctionne entièrement côté GitHub : aucune approbation manuelle requise.
 # Déclenchement manuel possible depuis l'onglet Actions du dépôt.
 name: Mettre à jour les flux OHdio
@@ -26,14 +33,20 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Régénérer les flux
+      - name: Régénérer La journée
         run: |
           python3 scripts/generate_la_journee.py --limit 30 --out la-journee.xml \
             --feed-url https://raw.githubusercontent.com/fpigeon/rss-ohdio/main/la-journee.xml
+
+      - name: Régénérer L'histoire
+        run: |
           python3 scripts/generate_feed.py \
             --series-url https://ici.radio-canada.ca/ohdio/balados/14021/lhistoire-est-encore-jeune \
             --out lhistoire.xml --limit 30 --min-duration 600 \
             --feed-url https://raw.githubusercontent.com/fpigeon/rss-ohdio/main/lhistoire.xml
+
+      - name: Régénérer Hors des ondes
+        run: |
           python3 scripts/generate_feed.py \
             --series-url https://ici.radio-canada.ca/ohdio/balados/13843/hors-des-ondes-avec-patrice-roy \
             --out hors-des-ondes.xml --limit 30 --min-duration 600 \
